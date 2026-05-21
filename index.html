@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <link rel="icon" href="https://uploads.onecompiler.io/445w2qj6u/44bhj9kar/images.png" type="image/x-icon">
@@ -4701,65 +4701,288 @@
     <!-- Circular Logo Style with Heading - Creative & Professional -->
     <div style="display: flex; flex-direction: row; align-items: center; gap: 50px; margin: 0 auto; justify-content: center; flex-wrap: wrap; width: 100%;">
     
-        <!-- Portfolio Card Cube -->
-        <div class="circular-logo-item">
-            <div class="cube-card-container portfolio-cube" onclick="openPortfolioModal()" style="cursor: pointer;">
-            <div class="cube-face cube-front">
-            <i class="fas fa-briefcase"></i>
-            </div>
-            <div class="cube-face cube-back"></div>
-            <div class="cube-face cube-right"></div>
-            <div class="cube-face cube-left"></div>
-            <div class="cube-face cube-top"></div>
-            <div class="cube-face cube-bottom"></div>
-            <span class="cube-label">Portfolio</span>
-            </div>
-        </div>
+       <!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        <!-- Resume Card Cube -->
-        <div class="circular-logo-item">
-            <div class="cube-card-container resume-cube" onclick="openResumeModal()" style="cursor: pointer;">
-            <div class="cube-face cube-front">
-            <i class="fas fa-file-invoice"></i>
-            </div>
-            <div class="cube-face cube-back"></div>
-            <div class="cube-face cube-right"></div>
-            <div class="cube-face cube-left"></div>
-            <div class="cube-face cube-top"></div>
-            <div class="cube-face cube-bottom"></div>
-            <span class="cube-label">Resume</span>
-            </div>
-        </div>
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        <!-- Certifications Card Cube -->
-        <div class="circular-logo-item">
-            <div class="cube-card-container cert-cube" onclick="openCertificatesModal()" style="cursor: pointer;">
-            <div class="cube-face cube-front">
-            <i class="fas fa-certificate"></i>
-            </div>
-            <div class="cube-face cube-back"></div>
-            <div class="cube-face cube-right"></div>
-            <div class="cube-face cube-left"></div>
-            <div class="cube-face cube-top"></div>
-            <div class="cube-face cube-bottom"></div>
-            <span class="cube-label">Certifications</span>
-            </div>
-        </div>
+<style>
 
-        <!-- Projects Card Cube -->
-        <div class="circular-logo-item">
-            <div class="cube-card-container projects-cube" onclick="openProjectsModal()" style="cursor: pointer;">
-            <div class="cube-face cube-front">
-            <i class="fas fa-laptop-code"></i>
-            </div>
-            <div class="cube-face cube-back"></div>
-            <div class="cube-face cube-right"></div>
-            <div class="cube-face cube-left"></div>
-            <div class="cube-face cube-top"></div>
-            <div class="cube-face cube-bottom"></div>
-            <span class="cube-label">Projects</span>
-            </div>
-        </div>
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.cards-wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:55px;
+
+    padding:40px 50px;
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(145deg,#f7f7f7,#e5e5e5);
+
+    box-shadow:
+    15px 15px 35px rgba(0,0,0,0.08),
+    -10px -10px 30px rgba(255,255,255,0.95);
+}
+
+/* =========================
+   CARD
+========================= */
+
+.mini-card{
+    position:relative;
+
+    width:155px;
+    height:155px;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(145deg,#f8f8f8,#ebebeb);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    transition:0.45s ease;
+
+    box-shadow:
+    8px 8px 20px rgba(0,0,0,0.07),
+    -6px -6px 18px rgba(255,255,255,0.95);
+}
+
+/* =========================
+   BORDER EFFECT
+========================= */
+
+.mini-card::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    border-radius:28px;
+
+    padding:2px;
+
+    background:var(--clr);
+
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+
+    opacity:0.95;
+}
+
+/* =========================
+   GLOW EFFECT
+========================= */
+
+.mini-card::after{
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+    height:140px;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,0.7),
+    transparent 70%);
+
+    top:-30px;
+    left:-30px;
+}
+
+/* =========================
+   ICON
+========================= */
+
+.mini-card i{
+    font-size:52px;
+
+    color:var(--clr);
+
+    z-index:2;
+
+    transition:0.4s ease;
+}
+
+/* =========================
+   LABEL
+========================= */
+
+.card-label{
+    margin-top:18px;
+
+    font-size:15px;
+    font-weight:600;
+
+    color:#555;
+
+    z-index:2;
+
+    letter-spacing:0.4px;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.mini-card:hover{
+    transform:
+    translateY(-12px)
+    scale(1.06);
+
+    box-shadow:
+    0 18px 35px rgba(0,0,0,0.12);
+}
+
+.mini-card:hover i{
+    transform:
+    scale(1.15)
+    rotate(-6deg);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .cards-wrapper{
+        gap:25px;
+        padding:30px;
+    }
+
+    .mini-card{
+        width:130px;
+        height:130px;
+    }
+
+    .mini-card i{
+        font-size:42px;
+    }
+}
+
+@media(max-width:768px){
+
+    .cards-wrapper{
+        flex-wrap:wrap;
+    }
+}
+
+</style>
+
+
+<div class="cards-wrapper">
+
+    <!-- PORTFOLIO -->
+    <div class="mini-card"
+         style="--clr:#4c8dff;"
+         onclick="openPortfolioModal()">
+
+        <i class="fas fa-briefcase"></i>
+
+        <span class="card-label">
+            Portfolio
+        </span>
+    </div>
+
+    <!-- QUALIFICATION -->
+    <div class="mini-card"
+         style="--clr:#9b6dff;"
+         onclick="openResumeModal()">
+
+        <i class="fas fa-file-invoice"></i>
+
+        <span class="card-label">
+            Qualification
+        </span>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="mini-card"
+         style="--clr:#f4a000;"
+         onclick="openCertificatesModal()">
+
+        <i class="fas fa-certificate"></i>
+
+        <span class="card-label">
+            Certifications
+        </span>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="mini-card"
+         style="--clr:#18c58f;"
+         onclick="openProjectsModal()">
+
+        <i class="fas fa-laptop-code"></i>
+
+        <span class="card-label">
+            Projects
+        </span>
+    </div>
+
+</div>
+
+<!-- =========================
+     JAVASCRIPT FUNCTIONS
+========================= -->
+
+<script>
+
+/* =========================
+   OPEN FUNCTIONS
+========================= */
+
+function openPortfolioModal(){
+
+    // Open Portfolio Page
+    window.location.href = "portfolio.html";
+
+    // OR use modal:
+    // document.getElementById("portfolioModal").style.display="block";
+}
+
+function openResumeModal(){
+
+    // Open Qualification Page
+    window.location.href = "qualification.html";
+}
+
+function openCertificatesModal(){
+
+    // Open Certificates Page
+    window.location.href = "certificates.html";
+}
+
+function openProjectsModal(){
+
+    // Open Projects Page
+    window.location.href = "projects.html";
+}
+
+</script>
 
         
         <style>
@@ -5145,134 +5368,903 @@
             </div>
 
             <style>
-                /* Creative Circle Logo Styles */
-                .project-circle-logo {
-                    width: 140px;
-                    height: 140px;
-                    margin: 0 auto 20px;
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    perspective: 1000px;
-                }
+                /* =========================================
+   MODERN BABY GREEN PROJECTS THEME
+========================================= */
 
-                .circle-border {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 50%;
-                    border: 3px solid rgba(59, 130, 246, 0.3);
-                    animation: rotateBorder 8s linear infinite;
-                    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15) inset;
-                }
+/* MODAL BACKGROUND */
 
-                .circle-inner {
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    border-radius: 50%;
-                    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(245, 158, 11, 0.1));
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 3rem;
-                    color: var(--primary-color);
-                    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-                    z-index: 2;
-                    animation: floatIcon 3s ease-in-out infinite;
-                }
+.projects-modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
 
-                .circle-glow {
-                    position: absolute;
-                    width: 140px;
-                    height: 140px;
-                    border-radius: 50%;
-                    background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%);
-                    filter: blur(15px);
-                    opacity: 0;
-                    animation: glowPulse 2s ease-in-out infinite;
-                    z-index: 0;
-                }
+    overflow-y:auto;
 
-                @keyframes rotateBorder {
-                    from {
-                        transform: rotateZ(0deg);
-                    }
-                    to {
-                        transform: rotateZ(360deg);
-                    }
-                }
+    background:
+    linear-gradient(
+    135deg,
+    rgba(226,239,222,0.55),
+    rgba(242,248,239,0.75));
 
-                @keyframes floatIcon {
-                    0%, 100% {
-                        transform: translateY(0) scale(1);
-                    }
-                    50% {
-                        transform: translateY(-12px) scale(1.08);
-                    }
-                }
+    backdrop-filter:blur(12px);
 
-                @keyframes glowPulse {
-                    0%, 100% {
-                        opacity: 0.2;
-                        transform: scale(1);
-                    }
-                    50% {
-                        opacity: 0.5;
-                        transform: scale(1.15);
-                    }
-                }
+    animation:fadeIn 0.4s ease;
+}
 
-                /* Hover effects for circle logo */
-                .project-card:hover .circle-border {
-                    border-color: rgba(59, 130, 246, 0.8);
-                    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4) inset, 0 0 40px rgba(59, 130, 246, 0.2);
-                }
+/* =========================================
+   MAIN MODAL CONTAINER
+========================================= */
 
-                .project-card:hover .circle-inner {
-                    animation: floatIconActive 1.5s ease-in-out infinite;
-                    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 1);
-                    background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(245, 158, 11, 0.15));
-                }
+.projects-modal-content{
+    position:relative;
 
-                .project-card:hover .circle-glow {
-                    animation: glowPulseActive 1.5s ease-in-out infinite;
-                }
+    width:92%;
+    max-width:1450px;
 
-                @keyframes floatIconActive {
-                    0%, 100% {
-                        transform: translateY(-5px) scale(1.05);
-                    }
-                    50% {
-                        transform: translateY(-18px) scale(1.15);
-                    }
-                }
+    margin:35px auto;
 
-                @keyframes glowPulseActive {
-                    0%, 100% {
-                        opacity: 0.4;
-                        transform: scale(1.05);
-                    }
-                    50% {
-                        opacity: 0.8;
-                        transform: scale(1.25);
-                    }
-                }
+    padding:40px;
 
-                /* Update project image styling to accommodate new circle logo */
-                .project-image {
-                    display: none;
-                }
+    border-radius:34px;
 
-                .project-card {
-                    text-align: center;
-                }
+    background:
+    linear-gradient(
+    145deg,
+    #f8fcf6,
+    #eef6eb);
+
+    border:1px solid rgba(145,168,135,0.18);
+
+    box-shadow:
+    0 20px 60px rgba(111,133,101,0.10);
+
+    overflow:hidden;
+}
+
+/* SOFT GLOW */
+
+.projects-modal-content::before{
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    background:
+    radial-gradient(circle,
+    rgba(177,205,164,0.22),
+    transparent 70%);
+
+    top:-140px;
+    right:-100px;
+
+    border-radius:50%;
+}
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.projects-close{
+    position:absolute;
+
+    top:22px;
+    right:22px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#edf5e8;
+
+    color:#72835f;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:0.35s ease;
+
+    box-shadow:
+    0 8px 18px rgba(111,133,101,0.10);
+}
+
+.projects-close:hover{
+    background:#91a887;
+    color:white;
+
+    transform:
+    rotate(90deg)
+    scale(1.05);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.projects-modal-content h2{
+    margin:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+
+    font-size:42px;
+    font-weight:700;
+
+    color:#657554;
+
+    position:relative;
+    z-index:2;
+}
+
+/* ICON */
+
+.projects-modal-content h2 i{
+    width:70px;
+    height:70px;
+
+    border-radius:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+    145deg,
+    #dcead4,
+    #edf7e9);
+
+    color:#7d936f;
+
+    box-shadow:
+    0 10px 25px rgba(111,133,101,0.12);
+}
+
+/* SUBTITLE */
+
+.modal-subtitle{
+    text-align:center;
+
+    margin-top:18px;
+
+    font-size:15px;
+    line-height:1.8;
+
+    color:#8b9a7d;
+
+    position:relative;
+    z-index:2;
+}
+
+/* =========================================
+   FILTER BUTTONS
+========================================= */
+
+.projects-filter{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-top:35px;
+    margin-bottom:40px;
+
+    position:relative;
+    z-index:2;
+}
+
+/* BUTTON */
+
+.project-filter-btn{
+    border:none;
+    outline:none;
+
+    padding:14px 28px;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+    145deg,
+    #f5fbf2,
+    #e5f0df);
+
+    color:#677756;
+
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    transition:0.35s ease;
+
+    box-shadow:
+    0 8px 18px rgba(111,133,101,0.08);
+}
+
+/* ACTIVE + HOVER */
+
+.project-filter-btn:hover,
+.project-filter-btn.active{
+
+    background:
+    linear-gradient(
+    145deg,
+    #91a887,
+    #788d69);
+
+    color:white;
+
+    transform:
+    translateY(-3px)
+    scale(1.02);
+
+    box-shadow:
+    0 14px 25px rgba(111,133,101,0.18);
+}
+
+/* =========================================
+   PROJECT GRID
+========================================= */
+
+.projects-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:28px;
+}
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.project-card{
+    position:relative;
+
+    padding:32px 28px;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(
+    145deg,
+    #f9fdf7,
+    #edf5ea);
+
+    border:1px solid rgba(145,168,135,0.14);
+
+    text-align:center;
+
+    overflow:hidden;
+
+    transition:0.45s ease;
+
+    box-shadow:
+    0 12px 28px rgba(111,133,101,0.08);
+}
+
+/* CARD HOVER */
+
+.project-card:hover{
+    transform:
+    translateY(-10px)
+    scale(1.02);
+
+    box-shadow:
+    0 20px 40px rgba(111,133,101,0.15);
+}
+
+/* TOP GLOW */
+
+.project-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    background:
+    radial-gradient(circle,
+    rgba(177,205,164,0.15),
+    transparent 70%);
+
+    top:-90px;
+    right:-70px;
+}
+
+/* =========================================
+   BADGE
+========================================= */
+
+.project-badge{
+    position:absolute;
+
+    top:20px;
+    right:20px;
+
+    padding:7px 14px;
+
+    border-radius:30px;
+
+    background:#e7f3df;
+
+    color:#6f855f;
+
+    font-size:11px;
+    font-weight:600;
+
+    border:1px solid rgba(145,168,135,0.18);
+}
+
+/* =========================================
+   CIRCLE LOGO
+========================================= */
+
+.project-circle-logo{
+    position:relative;
+
+    width:115px;
+    height:115px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+    145deg,
+    #edf6e8,
+    #dcead4);
+
+    transition:0.4s ease;
+
+    box-shadow:
+    0 10px 25px rgba(111,133,101,0.12);
+}
+
+.project-circle-logo:hover{
+    transform:
+    rotate(-6deg)
+    scale(1.08);
+}
+
+/* ICON */
+
+.circle-inner i{
+    font-size:42px;
+    color:#7a8f6b;
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.project-card h3{
+    margin-top:28px;
+    margin-bottom:14px;
+
+    font-size:25px;
+    font-weight:700;
+
+    color:#566447;
+}
+
+/* DESCRIPTION */
+
+.project-desc{
+    font-size:14px;
+    line-height:1.9;
+
+    color:#7d8d71;
+}
+
+/* =========================================
+   TECH STACK
+========================================= */
+
+.project-tech{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:24px;
+}
+
+.project-tech span{
+    padding:8px 14px;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+    145deg,
+    #edf7e8,
+    #dcead4);
+
+    color:#6f855f;
+
+    font-size:12px;
+    font-weight:600;
+
+    border:1px solid rgba(145,168,135,0.12);
+
+    transition:0.3s ease;
+}
+
+.project-tech span:hover{
+    background:#91a887;
+    color:white;
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+.project-animate{
+    animation:cardFade 0.8s ease forwards;
+    opacity:0;
+}
+
+@keyframes cardFade{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+    .projects-modal-content{
+        padding:24px;
+    }
+
+    .projects-modal-content h2{
+        font-size:30px;
+    }
+
+    .projects-grid{
+        grid-template-columns:1fr;
+    }
+
+    .project-filter-btn{
+        width:100%;
+        justify-content:center;
+    }
+}
+               
             </style>
             </div>
         </div>
 
         <style>
+            /* =========================================
+   PURE GREEN THEME PROJECTS MODAL
+========================================= */
+
+.projects-modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+
+    overflow-y:auto;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(230,245,232,0.65),
+    rgba(245,250,243,0.85));
+
+    backdrop-filter:blur(12px);
+}
+
+/* MAIN BOX */
+
+.projects-modal-content{
+    position:relative;
+
+    width:92%;
+    max-width:1450px;
+
+    margin:35px auto;
+
+    padding:40px;
+
+    border-radius:34px;
+
+    background:
+    linear-gradient(
+    145deg,
+    #f6fbf6,
+    #edf5ed);
+
+    border:1px solid rgba(34,85,50,0.18);
+
+    box-shadow:
+    0 20px 60px rgba(34,85,50,0.10);
+
+    overflow:hidden;
+}
+
+/* SOFT GREEN GLOW */
+
+.projects-modal-content::before{
+    content:"";
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    background:
+    radial-gradient(circle,
+    rgba(120,180,140,0.18),
+    transparent 70%);
+
+    top:-140px;
+    right:-100px;
+
+    border-radius:50%;
+}
+
+/* CLOSE BUTTON */
+
+.projects-close{
+    position:absolute;
+
+    top:22px;
+    right:22px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#edf6ee;
+
+    color:#2f5d3a;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+    border:1px solid rgba(34,85,50,0.15);
+}
+
+.projects-close:hover{
+    background:#2f5d3a;
+    color:white;
+    transform:rotate(90deg);
+}
+
+/* TITLE */
+
+.projects-modal-content h2{
+    margin:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+
+    font-size:42px;
+    font-weight:700;
+
+    color:#2f5d3a;
+}
+
+/* ICON */
+
+.projects-modal-content h2 i{
+    width:70px;
+    height:70px;
+
+    border-radius:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(145deg,#e7f3e8,#d9eadb);
+
+    color:#2f5d3a;
+
+    border:1px solid rgba(34,85,50,0.18);
+}
+
+/* SUBTITLE */
+
+.modal-subtitle{
+    text-align:center;
+
+    margin-top:18px;
+
+    font-size:15px;
+
+    color:#4f6b55;
+}
+
+/* FILTER BUTTONS */
+
+.projects-filter{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-top:35px;
+    margin-bottom:40px;
+}
+
+/* BUTTON */
+
+.project-filter-btn{
+    border:none;
+    outline:none;
+
+    padding:14px 28px;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(145deg,#f3faf3,#e5f1e5);
+
+    color:#2f5d3a;
+
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    border:1px solid rgba(34,85,50,0.15);
+
+    transition:0.35s ease;
+}
+
+/* HOVER + ACTIVE (GREEN ONLY) */
+
+.project-filter-btn:hover,
+.project-filter-btn.active{
+
+    background:
+    linear-gradient(145deg,#2f5d3a,#3f7a4f);
+
+    color:white;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 12px 25px rgba(34,85,50,0.18);
+}
+
+/* GRID */
+
+.projects-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:28px;
+}
+
+/* PROJECT CARD */
+
+.project-card{
+    position:relative;
+
+    padding:32px 28px;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(145deg,#f7fbf7,#edf5ed);
+
+    border:1px solid rgba(34,85,50,0.14);
+
+    text-align:center;
+
+    overflow:hidden;
+
+    transition:0.4s ease;
+}
+
+/* CARD HOVER */
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(34,85,50,0.15);
+}
+
+/* GREEN GLOW */
+
+.project-card::before{
+    content:"";
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    background:
+    radial-gradient(circle,
+    rgba(120,180,140,0.15),
+    transparent 70%);
+
+    top:-90px;
+    right:-70px;
+}
+
+/* BADGE */
+
+.project-badge{
+    position:absolute;
+
+    top:20px;
+    right:20px;
+
+    padding:7px 14px;
+
+    border-radius:30px;
+
+    background:#e7f3e8;
+
+    color:#2f5d3a;
+
+    font-size:11px;
+    font-weight:600;
+
+    border:1px solid rgba(34,85,50,0.18);
+}
+
+/* CIRCLE LOGO */
+
+.project-circle-logo{
+    width:115px;
+    height:115px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(145deg,#edf7ed,#dceedd);
+
+    border:1px solid rgba(34,85,50,0.18);
+
+    transition:0.4s ease;
+}
+
+/* ICON */
+
+.circle-inner i{
+    font-size:42px;
+    color:#2f5d3a;
+}
+
+/* TITLE */
+
+.project-card h3{
+    margin-top:28px;
+    font-size:25px;
+    font-weight:700;
+    color:#2f5d3a;
+}
+
+/* DESCRIPTION */
+
+.project-desc{
+    font-size:14px;
+    line-height:1.9;
+    color:#4f6b55;
+}
+
+/* TECH TAGS */
+
+.project-tech{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:24px;
+}
+
+.project-tech span{
+    padding:8px 14px;
+
+    border-radius:12px;
+
+    background:#e8f3e8;
+
+    color:#2f5d3a;
+
+    font-size:12px;
+    font-weight:600;
+
+    border:1px solid rgba(34,85,50,0.12);
+}
+
+/* ANIMATION */
+
+.project-animate{
+    animation:fadeUp 0.7s ease forwards;
+    opacity:0;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
             /* Projects Modal Styles */
             .projects-modal {
             display: none;
@@ -7789,6 +8781,7 @@
                         </div>
 
                         <style>
+                            
                             /* Creative Circle Tabs Container */
                             .resume-tabs-circle {
                                 display: flex;
