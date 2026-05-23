@@ -8727,351 +8727,297 @@ function openProjectsModal(){
 						<h2><i class="fas fa-file-alt"></i> Professional Profile </h2>
 						
 						
-						
-                        <!-- Resume Tabs with Circle Design -->
-                        <div class="resume-tabs-circle">
-                            <button class="resume-tab-circle" onclick="switchResumeTab('general')" title="Education & Experience">
-                                <div class="circle-inner">
-                                    <i class="fas fa-briefcase"></i>
-                                </div>
-                                <span class="circle-label">Education & Experience</span>
-                            </button>
-                            
-                            <button class="resume-tab-circle" onclick="switchResumeTab('management')" title="Management Focus">
-                                <div class="circle-inner">
-                                    <i class="fas fa-sitemap"></i>
-                                </div>
-                                <span class="circle-label">Management Focus</span>
-                            </button>
-                            
-                            <button class="resume-tab-circle" onclick="switchResumeTab('hr')" title="HR Specialist">
-                                <div class="circle-inner">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <span class="circle-label">HR Specialist</span>
-                            </button>
-                            
-                            <button class="resume-tab-circle" onclick="switchResumeTab('finance')" title="Finance & Ops">
-                                <div class="circle-inner">
-                                    <i class="fas fa-calculator"></i>
-                                </div>
-                                <span class="circle-label">Finance & Ops</span>
-                            </button>
-                            
-                            <button class="resume-tab-circle" onclick="switchResumeTab('technical')" title="Technical Skills">
-                                <div class="circle-inner">
-                                    <i class="fas fa-code"></i>
-                                </div>
-                                <span class="circle-label">Technical Skills</span>
-                            </button>
-                            
-                            <button class="resume-tab-circle" onclick="switchResumeTab('startup')" title="Startup Profile">
-                                <div class="circle-inner">
-                                    <i class="fas fa-rocket"></i>
-                                </div>
-                                <span class="circle-label">Startup Profile</span>
-                            </button>
-                        </div>
+						<!-- =========================
+     MODERN SHAPE RESUME TABS
+========================= -->
 
-                        <style>
-                            
-                            /* Creative Circle Tabs Container */
-                            .resume-tabs-circle {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                flex-wrap: wrap;
-                                gap: 30px;
-                                margin-bottom: 50px;
-                                padding: 40px 20px;
-                                background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(245, 158, 11, 0.05));
-                                border-radius: 30px;
-                                border: 2px solid rgba(59, 130, 246, 0.15);
-                                animation: containerGlow 3s ease-in-out infinite;
-                            }
+<div class="resume-tabs-modern">
 
-                            @keyframes containerGlow {
-                                0%, 100% {
-                                    box-shadow: 0 0 30px rgba(59, 130, 246, 0.1);
-                                }
-                                50% {
-                                    box-shadow: 0 0 50px rgba(59, 130, 246, 0.2);
-                                }
-                            }
+    <button class="resume-shape-tab active" onclick="switchResumeTab('general')">
+        <div class="shape-card soft-pink">
+            <div class="shape-icon">
+                <i class="fas fa-briefcase"></i>
+            </div>
 
-                            /* Individual Circle Tab Button */
-                            .resume-tab-circle {
-                                position: relative;
-                                width: 140px;
-                                height: 140px;
-                                border: none;
-                                background: transparent;
-                                cursor: pointer;
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                justify-content: center;
-                                gap: 12px;
-                                transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-                                padding: 0;
-                                outline: none;
-                            }
+            <div class="shape-title">
+                <span>Education</span>
+                <span>& Experience</span>
+            </div>
+        </div>
+    </button>
 
-                            /* Circle Inner Container */
-                            .resume-tab-circle .circle-inner {
-                                width: 120px;
-                                height: 120px;
-                                border-radius: 50%;
-                                background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-                                border: 3px solid rgba(59, 130, 246, 0.3);
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                font-size: 3rem;
-                                color: var(--primary-color);
-                                transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-                                position: relative;
-                                overflow: hidden;
-                                box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2);
-                                animation: circleFloat 3s ease-in-out infinite;
-                            }
+    <button class="resume-shape-tab" onclick="switchResumeTab('management')">
+        <div class="shape-card soft-blue">
+            <div class="shape-icon">
+                <i class="fas fa-sitemap"></i>
+            </div>
 
-                            @keyframes circleFloat {
-                                0%, 100% {
-                                    transform: translateY(0) scale(1);
-                                }
-                                50% {
-                                    transform: translateY(-8px) scale(1.02);
-                                }
-                            }
+            <div class="shape-title">
+                <span>Management</span>
+                <span>Focus</span>
+            </div>
+        </div>
+    </button>
 
-                            /* Shimmer effect inside circle */
-                            .resume-tab-circle .circle-inner::before {
-                                content: '';
-                                position: absolute;
-                                inset: 0;
-                                background: linear-gradient(
-                                    45deg,
-                                    transparent 30%,
-                                    rgba(255, 255, 255, 0.3) 50%,
-                                    transparent 70%
-                                );
-                                transform: translateX(-100%);
-                                animation: shimmerEffect 3s infinite;
-                            }
+    <button class="resume-shape-tab" onclick="switchResumeTab('hr')">
+        <div class="shape-card soft-green">
+            <div class="shape-icon">
+                <i class="fas fa-users"></i>
+            </div>
 
-                            @keyframes shimmerEffect {
-                                0% {
-                                    transform: translateX(-100%);
-                                }
-                                100% {
-                                    transform: translateX(100%);
-                                }
-                            }
+            <div class="shape-title">
+                <span>HR</span>
+                <span>Specialist</span>
+            </div>
+        </div>
+    </button>
 
-                            /* Glow border effect */
-                            .resume-tab-circle .circle-inner::after {
-                                content: '';
-                                position: absolute;
-                                inset: -3px;
-                                border-radius: 50%;
-                                background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-                                opacity: 0;
-                                transition: opacity 0.4s ease;
-                                z-index: -1;
-                                animation: borderGlow 2s ease-in-out infinite;
-                            }
+    <button class="resume-shape-tab" onclick="switchResumeTab('finance')">
+        <div class="shape-card soft-yellow">
+            <div class="shape-icon">
+                <i class="fas fa-calculator"></i>
+            </div>
 
-                            @keyframes borderGlow {
-                                0%, 100% {
-                                    opacity: 0.2;
-                                    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-                                }
-                                50% {
-                                    opacity: 0.5;
-                                    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
-                                }
-                            }
+            <div class="shape-title">
+                <span>Finance</span>
+                <span>& Ops</span>
+            </div>
+        </div>
+    </button>
 
-                            /* Circle Label */
-                            .resume-tab-circle .circle-label {
-                                font-size: 0.85rem;
-                                font-weight: 700;
-                                color: var(--text-color);
-                                text-align: center;
-                                max-width: 140px;
-                                line-height: 1.3;
-                                transition: all 0.3s ease;
-                                opacity: 0.7;
-                            }
+    <button class="resume-shape-tab" onclick="switchResumeTab('technical')">
+        <div class="shape-card soft-purple">
+            <div class="shape-icon">
+                <i class="fas fa-code"></i>
+            </div>
 
-                            /* Hover State */
-                            .resume-tab-circle:hover .circle-inner {
-                                transform: scale(1.15) rotateZ(5deg);
-                                border-color: var(--primary-color);
-                                box-shadow: 0 20px 60px rgba(59, 130, 246, 0.35),
-                                            inset 0 0 20px rgba(59, 130, 246, 0.1);
-                                background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), #f8fbff);
-                            }
+            <div class="shape-title">
+                <span>Technical</span>
+                <span>Skills</span>
+            </div>
+        </div>
+    </button>
 
-                            .resume-tab-circle:hover .circle-label {
-                                color: var(--primary-color);
-                                opacity: 1;
-                                font-weight: 800;
-                            }
+    <button class="resume-shape-tab" onclick="switchResumeTab('startup')">
+        <div class="shape-card soft-orange">
+            <div class="shape-icon">
+                <i class="fas fa-rocket"></i>
+            </div>
 
-                            /* Active State */
-                            .resume-tab-circle.active .circle-inner {
-                                background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-                                color: white;
-                                border-color: transparent;
-                                box-shadow: 0 30px 80px rgba(59, 130, 246, 0.4),
-                                            inset 0 0 30px rgba(255, 255, 255, 0.2);
-                                animation: activeCircleFloat 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-                            }
+            <div class="shape-title">
+                <span>Startup</span>
+                <span>Profile</span>
+            </div>
+        </div>
+    </button>
 
-                            @keyframes activeCircleFloat {
-                                0% {
-                                    transform: scale(1) translateY(0);
-                                }
-                                50% {
-                                    transform: scale(1.2) translateY(-15px);
-                                }
-                                100% {
-                                    transform: scale(1.12) translateY(-5px);
-                                }
-                            }
+</div>
+						<style>
+							/* =========================
+   ULTRA COMPACT RESUME TABS
+========================= */
 
-                            .resume-tab-circle.active .circle-label {
-                                color: var(--primary-color);
-                                opacity: 1;
-                                font-weight: 900;
-                                letter-spacing: 0.5px;
-                            }
+.resume-tabs-modern{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
 
-                            /* Pulse animation for active circle */
-                            .resume-tab-circle.active .circle-inner::after {
-                                animation: activePulse 1.5s ease-in-out infinite;
-                            }
+    gap:10px;
+    padding:14px;
 
-                            @keyframes activePulse {
-                                0%, 100% {
-                                    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-                                }
-                                50% {
-                                    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
-                                }
-                            }
+    background:#f9fbff;
 
-                            /* Particle effects on hover */
-                            .resume-tab-circle::before {
-                                content: '';
-                                position: absolute;
-                                width: 100%;
-                                height: 100%;
-                                background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-                                border-radius: 50%;
-                                opacity: 0;
-                                transform: scale(0.8);
-                                transition: all 0.4s ease;
-                            }
+    border:2px solid #111827;
+    border-radius:22px;
+}
 
-                            .resume-tab-circle:hover::before {
-                                opacity: 1;
-                                transform: scale(1.5);
-                            }
+/* BUTTON */
 
-                            /* Responsive Design */
-                            @media (max-width: 1024px) {
-                                .resume-tabs-circle {
-                                    gap: 20px;
-                                    padding: 30px 15px;
-                                }
+.resume-shape-tab{
+    border:none;
+    background:none;
+    cursor:pointer;
+    padding:0;
+}
 
-                                .resume-tab-circle {
-                                    width: 120px;
-                                    height: 120px;
-                                    gap: 10px;
-                                }
+/* =========================
+   SMALL SHAPE CARD
+========================= */
 
-                                .resume-tab-circle .circle-inner {
-                                    width: 100px;
-                                    height: 100px;
-                                    font-size: 2.5rem;
-                                }
+.shape-card{
+    width:118px;
+    height:48px;
 
-                                .resume-tab-circle .circle-label {
-                                    font-size: 0.75rem;
-                                    max-width: 120px;
-                                }
-                            }
+    padding:6px 8px;
 
-                            @media (max-width: 768px) {
-                                .resume-tabs-circle {
-                                    gap: 15px;
-                                    padding: 20px 10px;
-                                }
+    border:2px solid #111827;
+    border-radius:16px;
 
-                                .resume-tab-circle {
-                                    width: 100px;
-                                    height: 100px;
-                                    gap: 8px;
-                                }
+    display:flex;
+    align-items:center;
+    gap:8px;
 
-                                .resume-tab-circle .circle-inner {
-                                    width: 80px;
-                                    height: 80px;
-                                    font-size: 2rem;
-                                    border-width: 2px;
-                                }
+    transition:0.3s ease;
 
-                                .resume-tab-circle .circle-label {
-                                    font-size: 0.7rem;
-                                    max-width: 100px;
-                                }
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.05);
+}
 
-                                .resume-tab-circle:hover .circle-inner {
-                                    transform: scale(1.1) rotateZ(0deg);
-                                }
-                            }
+/* =========================
+   ICON
+========================= */
 
-                            @media (max-width: 480px) {
-                                .resume-tabs-circle {
-                                    gap: 12px;
-                                    padding: 15px 8px;
-                                    border-radius: 20px;
-                                }
+.shape-icon{
+    width:28px;
+    height:28px;
+    min-width:28px;
 
-                                .resume-tab-circle {
-                                    width: 85px;
-                                    height: 85px;
-                                    gap: 6px;
-                                }
+    border-radius:8px;
 
-                                .resume-tab-circle .circle-inner {
-                                    width: 70px;
-                                    height: 70px;
-                                    font-size: 1.5rem;
-                                }
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-                                .resume-tab-circle .circle-label {
-                                    display: none;
-                                }
+    background:#fff;
 
-                                .resume-tab-circle:hover .circle-label {
-                                    display: block;
-                                    position: absolute;
-                                    bottom: -35px;
-                                    font-size: 0.65rem;
-                                    background: rgba(59, 130, 246, 0.9);
-                                    color: white;
-                                    padding: 4px 8px;
-                                    border-radius: 6px;
-                                    white-space: nowrap;
-                                    z-index: 10;
-                                }
-                            }
-                        </style>
+    border:2px solid #111827;
+
+    font-size:0.78rem;
+    color:#111827;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.shape-title{
+    display:flex;
+    align-items:center;
+
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+.shape-title span{
+    padding:4px 8px;
+
+    border-radius:8px;
+
+    background:#fff;
+
+    border:2px solid #111827;
+
+    font-size:0.55rem;
+    font-weight:700;
+
+    color:#111827;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+/* =========================
+   BABY COLORS
+========================= */
+
+.soft-pink{
+    background:#fff1f4;
+}
+
+.soft-blue{
+    background:#eef6ff;
+}
+
+.soft-green{
+    background:#effff5;
+}
+
+.soft-yellow{
+    background:#fff9eb;
+}
+
+.soft-purple{
+    background:#f7f2ff;
+}
+
+.soft-orange{
+    background:#fff3ea;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.resume-shape-tab:hover .shape-card{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* ACTIVE */
+
+.resume-shape-tab.active .shape-card{
+    border-color:#000;
+}
+
+.resume-shape-tab.active .shape-icon{
+    background:#111827;
+    color:#fff;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .resume-tabs-modern{
+        gap:8px;
+        padding:10px;
+    }
+
+    .shape-card{
+        width:108px;
+        height:44px;
+    }
+
+    .shape-title span{
+        font-size:0.5rem;
+        padding:3px 6px;
+    }
+}
+
+@media(max-width:480px){
+
+    .resume-tabs-modern{
+        gap:6px;
+        padding:8px;
+    }
+
+    .shape-card{
+        width:96px;
+        height:40px;
+
+        padding:5px 6px;
+        gap:6px;
+    }
+
+    .shape-icon{
+        width:24px;
+        height:24px;
+        min-width:24px;
+
+        font-size:0.65rem;
+    }
+
+    .shape-title span{
+        font-size:0.45rem;
+        padding:2px 5px;
+    }
+}
+							</style>
 
                         <script>
                             // Update switchResumeTab to work with active classes
